@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        ajax = function () {
+            var XMLHTTP = new XMLHttpRequest();
+            XMLHTTP.onreadystatechange = function () {
+                if (XMLHTTP.readyState == 4 && XMLHTTP.status == 200) {
+                    document.getElementById("par").innerHTML = XMLHTTP.responseText;
+                }
+            }
+            XMLHTTP.open("GET", "http://localhost:80/test.txt", true);
+            XMLHTTP.send();
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ecrire quelque chose dans le champs de saisie</p>
+    <input type="text" placeholder="Ecrire ici">
+    <input type="button" , onclick="ajax()" value="Valider">
+    <p id="par"></p>
+</body>
+</html>
